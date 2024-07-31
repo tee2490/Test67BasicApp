@@ -1,6 +1,6 @@
 ﻿namespace ConsoleApp1
 {
-    internal class Product
+    public class Product
     {
         //properties คุณสมบัติ
         public int Id { get; set; }
@@ -10,6 +10,7 @@
         static public string Company {  get; set; } //สามารถเข้าถึงโดยตรง มันอยู่ใน memory
         private double SpecialIngrediant { get; set; }
         protected double SpecialIngrediant1 { get; set; }
+        internal double SpecialIngrediant2 { get; set; }
 
         public Product() //Contructor 
         {
@@ -41,6 +42,11 @@
             return this.SpecialIngrediant;
         }
     
+        public double SetSpecial2(double SpecialIngrediant2)
+        {
+            SpecialIngrediant2 = SpecialIngrediant2 * 2 + 0.999;
+            return this.SpecialIngrediant2;
+        }
 
 
     }
