@@ -17,6 +17,7 @@ Product.Company = "Testttttttttttt"; //ยังไม่ได้สร้า�
 
 var product = new Product();
 
+product.SetSpecialbyTa(888);
 product.Display();
 
 

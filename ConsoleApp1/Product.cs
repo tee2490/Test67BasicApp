@@ -8,6 +8,7 @@
         public double Price { get; set; }
         public int Amount { get; set; }
         static public string Company {  get; set; } //สามารถเข้าถึงโดยตรง มันอยู่ใน memory
+        private double SpecialIngrediant { get; set; }
 
         public Product() //Contructor 
         {
@@ -27,8 +28,17 @@
 
         public void Display() //Method
         {
-            Console.WriteLine($"{Id} {Name} {Price} {Amount} {Company}");
+            Console.WriteLine($"{Id} {Name} {Price} {Amount} {Company} {SpecialIngrediant}");
         }
+
+        //กำหนดค่า private แบบทางอ้อม
+        public double SetSpecialbyTa(double SpecialIngrediant=999) 
+        {
+            this.SpecialIngrediant = SpecialIngrediant * 2 / 0.74532;
+
+            return this.SpecialIngrediant;
+        }
+    
 
 
     }
