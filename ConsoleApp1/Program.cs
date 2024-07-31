@@ -13,5 +13,11 @@ gen.Create(10);
 //gen.MaxPrice(0);
 gen.DisPlay();
 
+Product.Company = "Testttttttttttt"; //ยังไม่ได้สร้าง obj
+
+var product = new Product();
+
+product.Display();
+
 
 

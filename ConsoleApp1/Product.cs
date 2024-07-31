@@ -7,6 +7,7 @@
         public string Name { get; set; }
         public double Price { get; set; }
         public int Amount { get; set; }
+        static public string Company {  get; set; } //สามารถเข้าถึงโดยตรง มันอยู่ใน memory
 
         public Product() //Contructor 
         {
@@ -16,9 +17,9 @@
             Amount = 20;
         }
 
-        public Product(int id,string name,double price,int amount) //parameter
+        public Product(int Id,string name,double price,int amount) //parameter
         {
-            Id = id;
+            this.Id = Id; //บ่งบอกค่าในคลาส
             Name = name;
             Price = price;
             Amount = amount;
@@ -26,7 +27,9 @@
 
         public void Display() //Method
         {
-            Console.WriteLine($"{Id} {Name} {Price} {Amount}");
+            Console.WriteLine($"{Id} {Name} {Price} {Amount} {Company}");
         }
+
+
     }
 }
