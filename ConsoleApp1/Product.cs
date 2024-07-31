@@ -9,6 +9,7 @@
         public int Amount { get; set; }
         static public string Company {  get; set; } //สามารถเข้าถึงโดยตรง มันอยู่ใน memory
         private double SpecialIngrediant { get; set; }
+        protected double SpecialIngrediant1 { get; set; }
 
         public Product() //Contructor 
         {
@@ -28,7 +29,8 @@
 
         public void Display() //Method
         {
-            Console.WriteLine($"{Id} {Name} {Price} {Amount} {Company} {SpecialIngrediant}");
+            Console.WriteLine($"{Id} {Name} {Price} {Amount} {Company} " +
+                $"{SpecialIngrediant} {SpecialIngrediant1}");
         }
 
         //กำหนดค่า private แบบทางอ้อม

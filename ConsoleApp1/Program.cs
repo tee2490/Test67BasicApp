@@ -18,7 +18,13 @@ Product.Company = "Testttttttttttt"; //ยังไม่ได้สร้า�
 var product = new Product();
 
 product.SetSpecialbyTa(888);
-product.Display();
+//product.Display();
 
+//Inheritance
+
+var superCar = new SuperCar();
+
+superCar.SetSepicial1(777);
+superCar.Display();
 
 
