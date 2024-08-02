@@ -28,7 +28,9 @@
             Amount = amount;
         }
 
-        public void Display() //Method
+
+        //virtual (Overide Method)
+        public virtual void Display() //Method
         {
             Console.WriteLine($"{Id} {Name} {Price} {Amount} {Company} " +
                 $"{SpecialIngrediant} {SpecialIngrediant1}");

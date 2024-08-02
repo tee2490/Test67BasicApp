@@ -1,6 +1,5 @@
 ﻿using ConsoleApp1;
 
-var ps = new GenerateProduct();
+var superCar = new SuperCar();
 
-ps.Create(0);
-ps.DisPlay(-11111);
+superCar.Display();
