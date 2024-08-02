@@ -1,32 +1,6 @@
 ﻿using ConsoleApp1;
 
-//var product = new Product(); //object
-//var product1 = new  Product(11,"Book",500,55); //object
+var ps = new GenerateProduct();
 
-//product.Display();
-//product1.Display();
-
-var gen = new GenerateProduct();
-
-gen.Create(10);
-
-//gen.MaxPrice(0);
-gen.DisPlay();
-
-Product.Company = "Testttttttttttt"; //ยังไม่ได้สร้าง obj
-
-var product = new Product();
-
-product.SetSpecialbyTa(888);
-//product.Display();
-
-//Inheritance
-
-var superCar = new SuperCar();
-
-superCar.SetSepicial1(777);
-superCar.Display();
-
-
-
-
+ps.Create(0);
+ps.DisPlay(-11111);

@@ -35,6 +35,21 @@
             }
         }
 
+        public void DisPlay(int number) //Polymorphism
+        {
+            if (number > products.Count || number < 1) return;
+
+            for (int i = 0; i < number; i++)
+            {
+                var item = products[i];
+
+                var totalPrice = item.Price * item.Amount;
+                Console.WriteLine($"{item.Id,5} {item.Name,10} {item.Price,8:N2} " +
+                    $"{item.Amount,5} {totalPrice,10:N2} {Rating(totalPrice),8}");
+            }
+
+        }
+
         public void MaxPrice(int FirstLevel = 5)
         {
             FirstLevel = FirstLevel == 0 ? products.Count() : FirstLevel;
