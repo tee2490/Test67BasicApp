@@ -19,8 +19,8 @@
 
                 var count = FakeData.NameOfProduct.Count;
                 var name = FakeData.NameOfProduct[ r.Next(0,count)  ];
-                var price = r.Next(10,101);
-                var amount = r.Next(10, 1000);         
+                var price = r.Next(10,101) + r.NextDouble();
+                var amount = r.Next(10, 100);         
 
                 ProductList.Add(new Product(id,name,price,amount));
             }
@@ -34,7 +34,13 @@
 
         public void Display()
         {
-            Console.WriteLine(ProductList.Count);
+            foreach (var p in ProductList)
+            {
+                var name = p.Name.Length > 15 ? p.Name.Substring(0,15) : p.Name;
+
+                Console.WriteLine($"{p.Id,5} {name,15} " +
+                    $"{p.Price,8:N2} {p.Amount,8}");
+            }
         }
 
         public void Update()
