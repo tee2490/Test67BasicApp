@@ -8,6 +8,6 @@
         void Display();
         void Create(int number);
         void Update();
-        void Delete();
+        void Delete(int id);
     }
 }
