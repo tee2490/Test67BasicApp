@@ -7,6 +7,7 @@
         //Method
         void Display();
         void Create(int number);
+        void Add(Product product);
         void Update();
         void Delete(int id);
     }

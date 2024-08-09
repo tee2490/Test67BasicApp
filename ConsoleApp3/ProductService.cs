@@ -55,7 +55,12 @@
 
         public void Update()
         {
+            //แก้ทั้งหมด หรือ บางส่วน
             throw new NotImplementedException();
+        }
+
+        public void Add(Product product)
+        {
         }
     }
 }
