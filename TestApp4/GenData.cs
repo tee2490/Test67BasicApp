@@ -36,5 +36,28 @@ namespace TestApp4
             }
         }
 
+        public void ShowByGroup()
+        {
+            var groupEmployee = EmployeeList
+                                .OrderBy(x => x.Section)
+                                .GroupBy(x => x.Section).ToList(); //จัดกลุ่ม
+
+            foreach (var group in groupEmployee)
+            {
+                Console.WriteLine(group.Key);
+                Console.WriteLine($"{"Id"} {"Sec.",40} {"Year",5} {"Salary",10} {"Tax",10} {"Bonus",10} {"Net",10}");
+
+                //แต่ละกลุ่ม
+                foreach (var e in group)
+                {
+                    e.Display();
+                }
+
+                Console.WriteLine();
+            }
+
+        }
+
+
     }
 }
