@@ -154,8 +154,32 @@ namespace ConsoleApp4.Data
         public void Delete(int id)
         { 
             var index = ProductList.FindIndex(p => p.Id == id);
+
+            if (index == -1)
+            {
+                Console.WriteLine("Not found");
+                return;
+            }
+
             ProductList.RemoveAt(index);
         }
+
+        public void Update(Product product)
+        {
+            var index = ProductList.FindIndex(p => p.Id == product.Id);
+
+            if (index == -1)
+            {
+                Console.WriteLine("Not found");
+                return;
+            }
+
+            ProductList.RemoveAt(index );
+            ProductList.Insert(index, product);
+
+        }
+
+
 
 
     }
