@@ -11,8 +11,6 @@ namespace ConsoleApp4.Data
         public GenData()
         {
             ProductList = new List<Product>();
-            Create();
-            WriteToFile();
         }
 
         public void Create(int number = 10)
@@ -89,7 +87,41 @@ namespace ConsoleApp4.Data
             }
         }
 
+        public void Menu()
+        {
+            //สร้างเมนูเาอเอง เช่น
+            //1.Add
+            //2.Delete
+            //3.....
+        }
 
+        public void Add(int number = 1)
+        {
+            CheckFile();
+
+            var lastID = File.ReadAllLines(fullPath).Count();
+            Random random = new Random();
+
+            using (StreamWriter writer = File.AppendText(fullPath))
+            {
+                for (int i = lastID; i < lastID + number; i++)
+                {
+                    Product item = new Product()
+                    {
+                        Id = i,
+                        Name = "ROV" + i,
+                        Price = random.Next(10, 1000) + random.NextDouble(),
+                        Amount = random.Next(10, 20)
+                    };
+
+                    writer.WriteLine($"{item.Id} {item.Name} " +
+                       $"{item.Price.ToString("##.##")} {item.Amount}");
+                }
+
+                writer.Close();
+            }
+
+        }
 
     }
 }
