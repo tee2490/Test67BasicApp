@@ -10,8 +10,19 @@ var ps = new GenData();
 //ps.ReadFromFile();
 
 //เพิ่มได้
-ps.Add(5);
-ps.Display();
+//ps.Add(5);
+
+//ลบ ค้นด้วย id
+ps.ReadFileToList();
+ps.DisplayProductList();
+
+Console.WriteLine();
+
+ps.Delete(15);
+//ps.DisplayProductList();
+ps.WriteToFile();
+Console.WriteLine();
+ps.ReadFromFile();
 
 
 

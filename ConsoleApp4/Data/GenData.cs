@@ -123,5 +123,40 @@ namespace ConsoleApp4.Data
 
         }
 
+
+        public void ReadFileToList()
+        {
+            if (CheckFile()) return;
+
+            ProductList.Clear();
+
+            foreach (string line in File.ReadLines(fullPath))
+            {
+                var data = line.Split(' ');
+
+                var p = new Product()
+                {
+                    Id = Convert.ToInt32(data[0]),
+                    Name = data[1],
+                    Price = Convert.ToDouble(data[2]),
+                    Amount = Convert.ToInt32(data[3])
+                };
+
+               ProductList.Add(p);
+            }
+        }
+
+        public void DisplayProductList()
+        {
+            ProductList.ForEach(p =>p.DisplayProduct());
+        }
+
+        public void Delete(int id)
+        { 
+            var index = ProductList.FindIndex(p => p.Id == id);
+            ProductList.RemoveAt(index);
+        }
+
+
     }
 }
